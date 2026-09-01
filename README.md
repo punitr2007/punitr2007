@@ -4,7 +4,7 @@
 
 I build desktop applications, multimedia processing tools, and custom Linux software. Currently focused on **Python**, **Modern C++**, **Video/Audio pipelines**, and **Linux systems tooling**.
 
-📬 [punitr2007@gmail.com](mailto:punitr2007@gmail.com) &nbsp;·&nbsp; 💼 [LinkedIn]([https://www.linkedin.com/](https://www.linkedin.com/in/punit-ranjan-53088028a?utm_source=share_via&utm_content=profile&utm_medium=member_android)) &nbsp;·&nbsp; 🌐 [GitHub](https://github.com/punitr2007)
+📬 [punitr2007@gmail.com](mailto:punitr2007@gmail.com) &nbsp;·&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/punit-ranjan-53088028a) &nbsp;·&nbsp; 🌐 [GitHub](https://github.com/punitr2007)
 
 ---
 
