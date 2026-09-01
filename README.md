@@ -2,7 +2,7 @@
 
 **Software & Systems Developer · India**
 
-I build desktop applications, multimedia processing pipelines, and high-performance tools. Currently focused on **Python**, **Modern C++**, **Audio DSP**, and **Linux tooling**.
+I build desktop applications, multimedia processing tools, and custom Linux software. Currently focused on **Python**, **Modern C++**, **Video/Audio pipelines**, and **Linux systems tooling**.
 
 📬 [punitr2007@gmail.com](mailto:punitr2007@gmail.com) &nbsp;·&nbsp; 💼 [LinkedIn](https://www.linkedin.com/) &nbsp;·&nbsp; 🌐 [GitHub](https://github.com/punitr2007)
 
@@ -10,10 +10,10 @@ I build desktop applications, multimedia processing pipelines, and high-performa
 
 ### About
 
-- 🌱 Currently deepening skills in **Modern C++ (C++20), Systems Architecture, and Audio DSP**
+- 🌱 Currently deepening skills in **Modern C++ (C++20), Systems Architecture, and Multimedia Engineering**
 - 🛠️ Building **DiscMaster** (multimedia mastering & extraction suite) and low-level video/audio utilities
-- 👥 Open to collaborating on **Open Source multimedia, systems, and developer tools**
-- 💬 Happy to talk about **Python, C++, FFmpeg pipelines, Linux packaging, and Audio/DSP**
+- 👥 Open to collaborating on **Open Source multimedia, desktop tooling, and systems utilities**
+- 💬 Happy to talk about **Python, C++, FFmpeg/mpv pipelines, Linux packaging, and UI/UX theming**
 
 ---
 
@@ -30,7 +30,7 @@ I build desktop applications, multimedia processing pipelines, and high-performa
 
 **Multimedia & Systems**  
 ![FFmpeg](https://img.shields.io/badge/FFmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white)
-![Audio DSP](https://img.shields.io/badge/Audio_DSP-4B0082?style=for-the-badge&logo=audacity&logoColor=white)
+![mpv](https://img.shields.io/badge/mpv_player-871B49?style=for-the-badge&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Tkinter](https://img.shields.io/badge/Tkinter_GUI-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
@@ -55,8 +55,8 @@ I build desktop applications, multimedia processing pipelines, and high-performa
 ### Featured Projects
 
 - 📀 **[DiscMaster](https://github.com/punitr2007/Discmaster)**: Zero-dependency Python desktop suite for VCD/CDDA audio extraction, track recovery, multi-threaded conversion, and AppImage standalone packaging.
-- 🎛️ **[AutoEq / DSP Tools](https://github.com/punitr2007)**: Automated headphone frequency response equalisation, parametric filters, and convolution engine analysis.
-- 🎬 **[Multimedia & Frame Interpolation](https://github.com/punitr2007)**: Real-time video processing, custom player tooling, and shader/FFmpeg workflow pipelines.
+- 🎬 **[SmartPlayer](https://github.com/punitr2007)**: Real-time 2x frame interpolation playback tool for `mpv` powered by VapourSynth, ncnn-Vulkan RIFE engine, and interactive Lua overlay scripts.
+- 🎨 **[The Ultimate Plasma](https://github.com/punitr2007)**: Unified, adaptive theme suite for KDE Plasma 6 bridging Qt, GTK3/4, and Libadwaita applications seamlessly.
 
 ---
 
