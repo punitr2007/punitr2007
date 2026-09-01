@@ -1,4 +1,4 @@
-# Punit R
+# Punit Ranjan
 
 **Software & Systems Developer · India**
 
