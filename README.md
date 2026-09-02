@@ -55,8 +55,8 @@ I build desktop applications, multimedia processing tools, and custom Linux soft
 ### Featured Projects
 
 - 📀 **[DiscMaster](https://github.com/punitr2007/Discmaster)**: Zero-dependency Python desktop suite for VCD/CDDA audio extraction, track recovery, multi-threaded conversion, and AppImage standalone packaging.
-- 🎬 **[SmartPlayer](https://github.com/punitr2007)**: Real-time 2x frame interpolation playback tool for `mpv` powered by VapourSynth, ncnn-Vulkan RIFE engine, and interactive Lua overlay scripts.
-- 🎨 **[The Ultimate Plasma](https://github.com/punitr2007)**: Unified, adaptive theme suite for KDE Plasma 6 bridging Qt, GTK3/4, and Libadwaita applications seamlessly.
+- 🎬 **[SmartPlayer / mpv-configs-interpolation](https://github.com/punitr2007/mpv-configs-interpolation)**: Real-time 2x frame interpolation playback configuration for `mpv` using VapourSynth, ncnn-Vulkan RIFE engine, and interactive Lua overlay scripts.
+- 📐 **[MathStudio](https://github.com/punitr2007)**: Fast, keyboard-first visual mathematical document editor & assignment suite with CortexJS MathLive integration, split-screen PDF problem sheet viewer, and multi-format export.
 
 ---
 
