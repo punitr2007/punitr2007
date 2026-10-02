@@ -51,9 +51,9 @@
       </nav>
 
       <div class="nav-actions">
-        <button id="terminalToggleBtn" class="btn-icon" title="Toggle Interactive Terminal (Ctrl+K)" aria-label="Open Terminal">
+        <button id="terminalToggleBtn" class="btn-icon" title="Toggle Interactive Terminal (Alt+T or ` key)" aria-label="Open Terminal">
           <i class="fa-solid fa-terminal"></i>
-          <span class="kbd-hint">^K</span>
+          <span class="kbd-hint">Alt+T / `</span>
         </button>
         <a href="https://github.com/punitr2007" target="_blank" rel="noopener noreferrer" class="btn-github-pill" aria-label="GitHub Profile">
           <i class="fa-brands fa-github"></i>
@@ -889,15 +889,31 @@
               Welcome to Punit Ranjan's Interactive Portfolio Shell (v2.4.0).
             </div>
             <div class="term-line text-dim">
-              Type <span class="term-cmd">help</span> to view available commands, or try <span class="term-cmd">neofetch</span>, <span class="term-cmd">projects</span>, or <span class="term-cmd">skills</span>.
+              Type <span class="term-cmd" data-cmd="help">help</span> to view available commands, or click any command to run: <span class="term-cmd" data-cmd="neofetch">neofetch</span>, <span class="term-cmd" data-cmd="projects">projects</span>, <span class="term-cmd" data-cmd="skills">skills</span>.
             </div>
             <div class="term-divider"></div>
           </div>
 
-          <div class="terminal-input-row">
-            <span class="prompt-user">punit</span><span class="prompt-at">@</span><span class="prompt-host">archlinux</span>:<span class="prompt-path">~</span><span class="prompt-char">$</span>
-            <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="Type a command (e.g. help, projects, neofetch, contact)..." />
+          <div class="terminal-quick-chips">
+            <span class="chips-label"><i class="fa-solid fa-play"></i> Quick Run:</span>
+            <button type="button" class="term-chip" data-cmd="help">help</button>
+            <button type="button" class="term-chip" data-cmd="neofetch">neofetch</button>
+            <button type="button" class="term-chip" data-cmd="projects">projects</button>
+            <button type="button" class="term-chip" data-cmd="skills">skills</button>
+            <button type="button" class="term-chip" data-cmd="about">about</button>
+            <button type="button" class="term-chip" data-cmd="contact">contact</button>
+            <button type="button" class="term-chip" data-cmd="clear">clear</button>
           </div>
+
+          <form id="terminalForm" class="terminal-input-row" autocomplete="off">
+            <label for="terminalInput" class="prompt-label">
+              <span class="prompt-user">punit</span><span class="prompt-at">@</span><span class="prompt-host">archlinux</span>:<span class="prompt-path">~</span><span class="prompt-char">$</span>
+            </label>
+            <input type="text" id="terminalInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type command &amp; press Enter (e.g. skills, neofetch)..." />
+            <button type="submit" class="term-run-btn" title="Run command (Enter)">
+              <i class="fa-solid fa-arrow-turn-down fa-rotate-90"></i>
+            </button>
+          </form>
         </div>
       </div>
     </section>

@@ -239,15 +239,18 @@ function initProjectControls() {
    -------------------------------------------------------------------------- */
 const terminalData = {
   commands: {
-    help: `Available commands:
-  • <span class="term-cmd">help</span>       - Show this command list
-  • <span class="term-cmd">neofetch</span>   - Display developer system telemetry
-  • <span class="term-cmd">projects</span>   - List all featured repositories with links
-  • <span class="term-cmd">skills</span>     - Display categorized technical skills
-  • <span class="term-cmd">about</span>      - Quick bio and engineering focus
-  • <span class="term-cmd">contact</span>    - Show contact details & LinkedIn
-  • <span class="term-cmd">clear</span>      - Clear terminal screen
-  • <span class="term-cmd">repo &lt;name&gt;</span> - Open specific repository on GitHub`,
+    help: `<b>Available Commands:</b>
+  • <span class="term-cmd" data-cmd="help">help</span>       - Show this command list
+  • <span class="term-cmd" data-cmd="neofetch">neofetch</span>   - Display developer system telemetry
+  • <span class="term-cmd" data-cmd="projects">projects</span>   - List all featured repositories with links
+  • <span class="term-cmd" data-cmd="skills">skills</span>     - Display categorized technical skills
+  • <span class="term-cmd" data-cmd="about">about</span>      - Quick bio and engineering focus
+  • <span class="term-cmd" data-cmd="contact">contact</span>    - Show contact details & LinkedIn
+  • <span class="term-cmd" data-cmd="ls">ls</span>         - List available virtual directory files
+  • <span class="term-cmd" data-cmd="date">date</span>       - Print current local timestamp (IST)
+  • <span class="term-cmd" data-cmd="clear">clear</span>      - Clear terminal screen
+  • <span class="term-cmd" data-cmd="repo Verilog_Tool">repo &lt;name&gt;</span> - Open specific repository (e.g. repo SmartPlayer)
+  <i>Tip: Click any command above or use quick pills to execute immediately.</i>`,
     
     neofetch: `<pre style="color:var(--accent-amber); font-size:0.8rem; line-height:1.2;">
         /\\         <b>punit@punitr2007-workstation</b>
@@ -255,17 +258,18 @@ const terminalData = {
       /\\   \\       <b>OS:</b> Arch Linux x86_64
      /      \\      <b>Host:</b> Custom Engineering Rig
     /   ,,   \\     <b>Kernel:</b> 6.12.x-arch1-1
-   /   |  |  -\\    <b>Uptime:</b> 24/7 Coding & Building
-  /_-''    ''-_\\   <b>Shell:</b> zsh 5.9
-                   <b>Languages:</b> C++, Rust, Python, TypeScript, Verilog
-                   <b>Frameworks:</b> Tauri v2, mpv/VapourSynth, React 19
+   /   |  |  -\\    <b>Uptime:</b> 24/7 Active Building
+  /_-''    ''-_\\   <b>Shell:</b> zsh 5.9 (x86_64-pc-linux-gnu)
+                   <b>Languages:</b> C++, Rust, Python, TypeScript, SystemVerilog
+                   <b>Frameworks:</b> Tauri v2, mpv/VapourSynth, React 19, Next.js 15
+                   <b>Graphics:</b> Vulkan 1.3, GLSL, RIFE AI (ncnn)
                    <b>Editor:</b> Neovim / VS Code
                    <b>Location:</b> New Delhi, India
 </pre>`,
 
     about: `<b>Punit Ranjan (@punitr2007)</b>
 Undergraduate Engineering Student at Netaji Subhas University of Technology (NSUT), Delhi.
-Specializing in systems development, real-time multimedia AI pipelines, hardware EDA simulators, and native desktop tooling.`,
+Specializing in systems software, real-time multimedia AI pipelines, hardware EDA simulators, and native desktop tooling.`,
 
     skills: `<b>Technical Competencies:</b>
   • <b>Languages:</b> C, C++, Rust, Python, TypeScript, SystemVerilog, VHDL, Lua, Bash, SQL
@@ -286,23 +290,36 @@ Specializing in systems development, real-time multimedia AI pipelines, hardware
     contact: `<b>Reach Out & Connect:</b>
   • <b>Email:</b> <a href="mailto:punitr2007@gmail.com" style="color:var(--accent-cyan)">punitr2007@gmail.com</a>
   • <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/punit-ranjan-53088028a" target="_blank" style="color:var(--accent-cyan)">linkedin.com/in/punit-ranjan-53088028a</a>
-  • <b>GitHub:</b> <a href="https://github.com/punitr2007" target="_blank" style="color:var(--accent-cyan)">github.com/punitr2007</a>`
+  • <b>GitHub:</b> <a href="https://github.com/punitr2007" target="_blank" style="color:var(--accent-cyan)">github.com/punitr2007</a>`,
+
+    ls: `<span style="color:var(--accent-cyan)">drwxr-xr-x</span>  projects/
+<span style="color:var(--accent-cyan)">drwxr-xr-x</span>  skills/
+<span style="color:var(--accent-emerald)">-rw-r--r--</span>  about.md
+<span style="color:var(--accent-emerald)">-rw-r--r--</span>  contact.txt
+<span style="color:var(--accent-amber)">-rwxr-xr-x</span>  run_neofetch.sh`,
+
+    date: () => {
+      const d = new Date();
+      return `Current Date & Time: <span style="color:var(--accent-amber)">${d.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })} (IST)</span>`;
+    }
   }
 };
 
 function initTerminalEmulator() {
+  const terminalForm = document.getElementById('terminalForm');
   const terminalInput = document.getElementById('terminalInput');
   const terminalOutput = document.getElementById('terminalOutput');
   const clearBtn = document.getElementById('clearTermBtn');
   const toggleBtn = document.getElementById('terminalToggleBtn');
   const termSection = document.getElementById('terminal');
+  const termContainer = document.querySelector('.terminal-container');
 
   if (!terminalInput || !terminalOutput) return;
 
   const history = [];
   let historyIndex = -1;
 
-  function appendLine(html, isCmd = false) {
+  function appendLine(html) {
     const line = document.createElement('div');
     line.className = 'term-line';
     line.innerHTML = html;
@@ -310,20 +327,29 @@ function initTerminalEmulator() {
     terminalOutput.scrollTop = terminalOutput.scrollHeight;
   }
 
+  function focusTerminal() {
+    if (termSection) {
+      termSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        terminalInput.focus();
+      }, 250);
+    }
+  }
+
   function executeCommand(rawCmd) {
-    const cmd = rawCmd.trim();
+    const cmd = (rawCmd || '').trim();
     if (!cmd) return;
 
     history.push(cmd);
     historyIndex = history.length;
 
     // Echo command
-    appendLine(`<span class="prompt-user">punit</span><span class="prompt-at">@</span><span class="prompt-host">archlinux</span>:<span class="prompt-path">~</span><span class="prompt-char">$</span> <b>${escapeHtml(cmd)}</b>`, true);
+    appendLine(`<span class="prompt-user">punit</span><span class="prompt-at">@</span><span class="prompt-host">archlinux</span>:<span class="prompt-path">~</span><span class="prompt-char">$</span> <b>${escapeHtml(cmd)}</b>`);
 
-    const parts = cmd.split(' ');
+    const parts = cmd.split(/\s+/);
     const mainCmd = parts[0].toLowerCase();
 
-    if (mainCmd === 'clear' || mainCmd === 'cls') {
+    if (mainCmd === 'clear' || mainCmd === 'cls' || mainCmd === 'reset') {
       terminalOutput.innerHTML = '';
       return;
     }
@@ -331,27 +357,113 @@ function initTerminalEmulator() {
     if (mainCmd === 'repo') {
       const repoName = parts[1];
       if (!repoName) {
-        appendLine(`<span style="color:#e06c75">Usage: repo &lt;name&gt; (e.g. repo Verilog_Tool, repo SmartPlayer)</span>`);
+        appendLine(`<span style="color:#e06c75">Usage: repo &lt;name&gt; (e.g. repo Verilog_Tool, repo SmartPlayer, repo mathstudio)</span>`);
       } else {
         const url = `https://github.com/punitr2007/${repoName}`;
-        appendLine(`Opening <a href="${url}" target="_blank" style="color:var(--accent-amber)">${url}</a> in new tab...`);
+        appendLine(`Opening <a href="${url}" target="_blank" style="color:var(--accent-amber)">${url}</a> in a new tab...`);
         window.open(url, '_blank');
       }
       return;
     }
 
-    if (terminalData.commands[mainCmd]) {
-      appendLine(terminalData.commands[mainCmd]);
+    if (mainCmd === 'cat') {
+      const file = (parts[1] || '').toLowerCase();
+      if (file === 'about.md' || file === 'about') {
+        appendLine(terminalData.commands.about);
+      } else if (file === 'contact.txt' || file === 'contact') {
+        appendLine(terminalData.commands.contact);
+      } else {
+        appendLine(`<span style="color:#e06c75">cat: ${escapeHtml(parts[1] || '')}: No such file or directory. Try 'cat about.md' or 'ls'</span>`);
+      }
+      return;
+    }
+
+    if (mainCmd === 'echo') {
+      appendLine(escapeHtml(parts.slice(1).join(' ')));
+      return;
+    }
+
+    if (mainCmd === 'whoami' || mainCmd === 'id') {
+      appendLine(`uid=1000(punit) gid=1000(punit) groups=1000(punit),wheel,storage,power,audio`);
+      return;
+    }
+
+    if (mainCmd === 'sudo') {
+      appendLine(`<span style="color:#e06c75">punit is not in the sudoers file. This incident will be reported.</span> 😉`);
+      return;
+    }
+
+    if (mainCmd === 'exit') {
+      appendLine(`Session logged out. (Just kidding, shell is ready!)`);
+      return;
+    }
+
+    // Alias mapping
+    let resolvedCmd = mainCmd;
+    if (['skill', 'stack', 'tech', 'technologies'].includes(mainCmd)) resolvedCmd = 'skills';
+    if (['project', 'repos', 'work'].includes(mainCmd)) resolvedCmd = 'projects';
+    if (['fetch', 'sys', 'system', 'specs'].includes(mainCmd)) resolvedCmd = 'neofetch';
+    if (['bio'].includes(mainCmd)) resolvedCmd = 'about';
+    if (['socials', 'email', 'linkedin'].includes(mainCmd)) resolvedCmd = 'contact';
+    if (['?', 'menu', 'commands', 'man'].includes(mainCmd)) resolvedCmd = 'help';
+
+    if (terminalData.commands[resolvedCmd]) {
+      const val = terminalData.commands[resolvedCmd];
+      if (typeof val === 'function') {
+        appendLine(val());
+      } else {
+        appendLine(val);
+      }
     } else {
-      appendLine(`<span style="color:#e06c75">zsh: command not found: ${escapeHtml(mainCmd)}</span>. Type <span class="term-cmd">help</span> for a list of valid commands.`);
+      appendLine(`<span style="color:#e06c75">zsh: command not found: ${escapeHtml(mainCmd)}</span>. Type <span class="term-cmd" data-cmd="help">help</span> or click quick pills above.`);
     }
   }
 
-  terminalInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
+  // Form submission (guarantees Enter / Return on desktop & mobile keyboards)
+  if (terminalForm) {
+    terminalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       executeCommand(terminalInput.value);
       terminalInput.value = '';
-    } else if (e.key === 'ArrowUp') {
+    });
+  }
+
+  // Quick Chips click handling
+  document.querySelectorAll('.term-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const cmd = chip.getAttribute('data-cmd');
+      if (cmd) {
+        terminalInput.value = '';
+        executeCommand(cmd);
+        terminalInput.focus();
+      }
+    });
+  });
+
+  // Clickable command spans in terminal output (event delegation)
+  terminalOutput.addEventListener('click', (e) => {
+    const cmdSpan = e.target.closest('.term-cmd');
+    if (cmdSpan) {
+      const cmd = cmdSpan.getAttribute('data-cmd') || cmdSpan.textContent.trim();
+      if (cmd) {
+        executeCommand(cmd);
+        terminalInput.focus();
+      }
+    }
+  });
+
+  // Focus input when clicking anywhere on terminal
+  if (termContainer) {
+    termContainer.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+        terminalInput.focus();
+      }
+    });
+  }
+
+  // Keyboard navigation for command history
+  terminalInput.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') {
       if (historyIndex > 0) {
         historyIndex--;
         terminalInput.value = history[historyIndex] || '';
@@ -366,7 +478,7 @@ function initTerminalEmulator() {
         terminalInput.value = '';
       }
       e.preventDefault();
-    } else if (e.ctrlKey && e.key === 'l') {
+    } else if (e.ctrlKey && e.key.toLowerCase() === 'l') {
       e.preventDefault();
       terminalOutput.innerHTML = '';
     }
@@ -379,21 +491,41 @@ function initTerminalEmulator() {
     });
   }
 
-  // Ctrl+K Shortcut to focus terminal
-  document.addEventListener('keydown', (e) => {
-    if (e.ctrlKey && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (termSection) {
-        termSection.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => terminalInput.focus(), 400);
-      }
-    }
-  });
+  // Global Keyboard Shortcuts for Terminal:
+  // 1. ` (Backtick / Tilde) - Universal quake console shortcut
+  // 2. Alt + T - Browser-safe alternative to avoid Firefox Ctrl+K collision
+  // 3. Ctrl + K - Supported with preventDefault
+  window.addEventListener('keydown', (e) => {
+    // Avoid triggering when user is already typing in an input/textarea
+    const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+    const isInput = activeTag === 'input' || activeTag === 'textarea';
 
-  if (toggleBtn && termSection) {
-    toggleBtn.addEventListener('click', () => {
-      termSection.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => terminalInput.focus(), 400);
+    // Backtick / Tilde key (when not typing in an input)
+    if ((e.key === '`' || e.key === '~') && !isInput) {
+      e.preventDefault();
+      focusTerminal();
+      return;
+    }
+
+    // Alt + T shortcut
+    if (e.altKey && e.key.toLowerCase() === 't') {
+      e.preventDefault();
+      focusTerminal();
+      return;
+    }
+
+    // Ctrl + K shortcut
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      e.stopPropagation();
+      focusTerminal();
+    }
+  }, true);
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      focusTerminal();
     });
   }
 }
@@ -490,8 +622,8 @@ const projectModalData = {
       <p><b>PDFtools</b> automatically sequences disorganized screenshot images and assignment questions into ordered publication PDFs.</p>
       <h4>Workflow</h4>
       <ul>
-        <li><b>Tesseract OCR Extraction:</b> Identifies question indices (`Q1`, `1.`, `Question 3`) from image regions.</li>
-        <li><b>Natural Numerical Sorting:</b> Sequences multi-digit assignments numerically (`1, 2, ..., 10`) rather than alphabetically.</li>
+        <li><b>Tesseract OCR Extraction:</b> Identifies question indices (<code>Q1</code>, <code>1.</code>, <code>Question 3</code>) from image regions.</li>
+        <li><b>Natural Numerical Sorting:</b> Sequences multi-digit assignments numerically (<code>1, 2, ..., 10</code>) rather than alphabetically.</li>
         <li><b>Batch Image Processing:</b> High-resolution Pillow image rendering with lossless PDF compression.</li>
       </ul>
     `,
