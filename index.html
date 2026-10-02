@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Punit Ranjan (@punitr2007) — Systems, Multimedia & Desktop Software Engineer. Showcasing Tauri v2 + Rust EDA Workstations, Real-Time AI Video Interpolation for mpv, and High-Performance Web Apps." />
+  <meta name="keywords" content="Punit Ranjan, punitr2007, Systems Developer, Tauri, Rust, C++, mpv, VapourSynth, Vulkan, EDA Tools, Verilog, Next.js, NSUT" />
+  <meta name="author" content="Punit Ranjan" />
+  <meta property="og:title" content="Punit Ranjan | Systems & Multimedia Developer" />
+  <meta property="og:description" content="Explore open-source systems engineering, AI video interpolation, hardware EDA tooling, and desktop applications by Punit Ranjan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://punitr2007.github.io/punitr2007/" />
+  
+  <title>Punit Ranjan (@punitr2007) — Systems &amp; Multimedia Engineer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-3" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Home">
+        <span class="brand-badge">⚡</span>
+        <span class="brand-name">punitr2007<span class="brand-dot">.dev</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
+          <li><a href="#skills" class="nav-link"><i class="fa-solid fa-microchip"></i> Tech Stack</a></li>
+          <li><a href="#projects" class="nav-link"><i class="fa-solid fa-layer-group"></i> Projects</a></li>
+          <li><a href="#terminal" class="nav-link"><i class="fa-solid fa-terminal"></i> Terminal</a></li>
+          <li><a href="#analytics" class="nav-link"><i class="fa-solid fa-chart-line"></i> Activity</a></li>
+          <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="terminalToggleBtn" class="btn-icon" title="Toggle Interactive Terminal (Ctrl+K)" aria-label="Open Terminal">
+          <i class="fa-solid fa-terminal"></i>
+          <span class="kbd-hint">^K</span>
+        </button>
+        <a href="https://github.com/punitr2007" target="_blank" rel="noopener noreferrer" class="btn-github-pill" aria-label="GitHub Profile">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+          <span class="github-star-count" id="headerStarCount"><i class="fa-solid fa-star"></i></span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill" id="statusPill">
+            <span class="pulse-indicator"></span>
+            <span class="status-text">Available for Systems &amp; Low-Level Engineering</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Punit Ranjan</span>
+          </h1>
+
+          <div class="typewriter-container">
+            <span class="type-prefix">&gt; </span>
+            <span class="typewriter-text" id="typewriter"></span>
+            <span class="cursor">_</span>
+          </div>
+
+          <p class="hero-description">
+            Undergraduate engineer at <b>NSUT Delhi</b> passionate about high-performance software. Crafting native desktop applications with <b>Tauri v2 + Rust</b>, real-time <b>AI video frame interpolation</b> engines for <b>mpv</b>, hardware <b>EDA workstations</b>, and snappy modern web systems.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-rocket"></i> Explore Projects
+            </a>
+            <a href="#terminal" class="btn btn-secondary">
+              <i class="fa-solid fa-terminal"></i> Launch Terminal
+            </a>
+            <button class="btn btn-outline copy-email-btn" data-email="punitr2007@gmail.com" title="Click to copy email">
+              <i class="fa-solid fa-copy"></i> Copy Email
+            </button>
+          </div>
+
+          <div class="hero-social-strip">
+            <a href="https://github.com/punitr2007" target="_blank" rel="noopener noreferrer" class="social-chip" title="GitHub">
+              <i class="fa-brands fa-github"></i> <span>punitr2007</span>
+            </a>
+            <a href="https://www.linkedin.com/in/punit-ranjan-53088028a" target="_blank" rel="noopener noreferrer" class="social-chip" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i> <span>Punit Ranjan</span>
+            </a>
+            <a href="mailto:punitr2007@gmail.com" class="social-chip" title="Direct Email">
+              <i class="fa-solid fa-envelope"></i> <span>punitr2007@gmail.com</span>
+            </a>
+            <span class="social-chip location-chip">
+              <i class="fa-solid fa-location-dot"></i> <span>Delhi, India</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-card-glass">
+            <div class="profile-card-header">
+              <div class="window-controls">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title">punit@archlinux: ~</div>
+            </div>
+            
+            <div class="profile-card-body">
+              <div class="avatar-wrapper">
+                <div class="avatar-glow"></div>
+                <div class="avatar-placeholder">
+                  <span class="avatar-initials">PR</span>
+                </div>
+              </div>
+
+              <div class="profile-meta">
+                <h3 class="profile-name">Punit Ranjan</h3>
+                <p class="profile-handle">@punitr2007</p>
+                <div class="profile-tags">
+                  <span class="tag tag-amber">Systems</span>
+                  <span class="tag tag-cyan">Rust / C++</span>
+                  <span class="tag tag-purple">Multimedia</span>
+                  <span class="tag tag-green">EDA</span>
+                </div>
+              </div>
+
+              <div class="quick-stats-grid">
+                <div class="stat-box">
+                  <span class="stat-number" id="heroReposCount">8+</span>
+                  <span class="stat-label">Core Repos</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number" id="heroStarsCount">★ Live</span>
+                  <span class="stat-label">GitHub Stars</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Open Source</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card-footer">
+              <div class="live-clock">
+                <i class="fa-regular fa-clock"></i> <span id="liveTime">IST --:--:--</span>
+              </div>
+              <div class="system-tag">
+                <i class="fa-brands fa-linux"></i> Linux 6.x x86_64
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Domains Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-compass"></i> Focus Areas</span>
+          <h2 class="section-title">Engineering What Matters</h2>
+          <p class="section-subtitle">Bridging the gap between low-level hardware abstraction and smooth, ergonomic application interfaces.</p>
+        </div>
+
+        <div class="domains-grid">
+          <div class="domain-card">
+            <div class="domain-icon-box icon-rust">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <h3 class="domain-title">Systems &amp; Native Desktop</h3>
+            <p class="domain-desc">
+              Building memory-safe, lightweight, sub-second startup desktop applications using <b>Tauri v2 + Rust</b>, <b>Modern C++</b>, and <b>GTK/Linux</b> toolchains with native OS integration.
+            </p>
+            <div class="domain-pills">
+              <span>Tauri v2</span>
+              <span>Rust</span>
+              <span>C++</span>
+              <span>AppImage</span>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-icon-box icon-media">
+              <i class="fa-solid fa-film"></i>
+            </div>
+            <h3 class="domain-title">Real-Time Multimedia &amp; AI</h3>
+            <p class="domain-desc">
+              High-throughput video processing pipelines utilizing <b>mpv</b>, <b>VapourSynth</b>, <b>FFmpeg</b>, and deep learning <b>RIFE AI</b> via <b>ncnn-Vulkan</b> and custom GLSL shaders.
+            </p>
+            <div class="domain-pills">
+              <span>mpv</span>
+              <span>VapourSynth</span>
+              <span>Vulkan</span>
+              <span>RIFE AI</span>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-icon-box icon-eda">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="domain-title">Hardware EDA &amp; Digital Logic</h3>
+            <p class="domain-desc">
+              Designing electronic design automation environments for <b>SystemVerilog</b>, <b>Verilog</b>, and <b>VHDL</b> with real-time waveform inspection, syntax parsing, and simulation.
+            </p>
+            <div class="domain-pills">
+              <span>SystemVerilog</span>
+              <span>VHDL</span>
+              <span>iverilog</span>
+              <span>GTKWave</span>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-icon-box icon-web">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3 class="domain-title">Modern Full-Stack &amp; WebApps</h3>
+            <p class="domain-desc">
+              Crafting responsive web applications with <b>Next.js 15</b>, <b>React 19</b>, <b>TypeScript</b>, and <b>WASM</b> featuring sub-10ms fuzzy indexing and instant client-side execution.
+            </p>
+            <div class="domain-pills">
+              <span>Next.js 15</span>
+              <span>React 19</span>
+              <span>TypeScript</span>
+              <span>WASM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Matrix Section -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-layer-group"></i> Technologies</span>
+          <h2 class="section-title">Tech Stack &amp; Tooling</h2>
+          <p class="section-subtitle">A curated view of languages, runtimes, hardware frameworks, and systems libraries I build with.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="tech-filter-bar">
+          <button class="tech-filter-btn active" data-filter="all">All Stack</button>
+          <button class="tech-filter-btn" data-filter="languages">Languages</button>
+          <button class="tech-filter-btn" data-filter="systems">Systems &amp; Media</button>
+          <button class="tech-filter-btn" data-filter="eda">EDA &amp; Hardware</button>
+          <button class="tech-filter-btn" data-filter="frameworks">Frameworks &amp; Web</button>
+          <button class="tech-filter-btn" data-filter="devops">Linux &amp; Tools</button>
+        </div>
+
+        <div class="skills-grid" id="skillsContainer">
+          <!-- Languages -->
+          <div class="skill-item" data-category="languages">
+            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="skill-info">
+              <h4>C / C++</h4>
+              <span>Systems &amp; High Perf</span>
+            </div>
+            <div class="skill-level"><span style="width: 90%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="languages">
+            <div class="skill-icon"><i class="fa-brands fa-rust"></i></div>
+            <div class="skill-info">
+              <h4>Rust</h4>
+              <span>Tauri v2 &amp; Memory Safety</span>
+            </div>
+            <div class="skill-level"><span style="width: 88%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="languages">
+            <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+            <div class="skill-info">
+              <h4>Python</h4>
+              <span>Automation, Media &amp; ML</span>
+            </div>
+            <div class="skill-level"><span style="width: 92%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="languages">
+            <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+            <div class="skill-info">
+              <h4>TypeScript / JS</h4>
+              <span>Modern Web &amp; Tooling</span>
+            </div>
+            <div class="skill-level"><span style="width: 90%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="languages">
+            <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="skill-info">
+              <h4>SystemVerilog / Verilog</h4>
+              <span>Digital Circuit Modeling</span>
+            </div>
+            <div class="skill-level"><span style="width: 85%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="languages">
+            <div class="skill-icon"><i class="fa-solid fa-memory"></i></div>
+            <div class="skill-info">
+              <h4>VHDL</h4>
+              <span>Hardware Description</span>
+            </div>
+            <div class="skill-level"><span style="width: 82%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="languages">
+            <div class="skill-icon"><i class="fa-solid fa-moon"></i></div>
+            <div class="skill-info">
+              <h4>Lua</h4>
+              <span>mpv Scripting &amp; Engine Ext</span>
+            </div>
+            <div class="skill-level"><span style="width: 85%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="languages">
+            <div class="skill-icon"><i class="fa-solid fa-terminal"></i></div>
+            <div class="skill-info">
+              <h4>Bash / Shell</h4>
+              <span>Linux Workflow Automation</span>
+            </div>
+            <div class="skill-level"><span style="width: 92%"></span></div>
+          </div>
+
+          <!-- Systems & Media -->
+          <div class="skill-item" data-category="systems">
+            <div class="skill-icon"><i class="fa-solid fa-play"></i></div>
+            <div class="skill-info">
+              <h4>mpv &amp; libmpv</h4>
+              <span>Advanced Media Engine</span>
+            </div>
+            <div class="skill-level"><span style="width: 95%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="systems">
+            <div class="skill-icon"><i class="fa-solid fa-sliders"></i></div>
+            <div class="skill-info">
+              <h4>VapourSynth</h4>
+              <span>Video Filtering Core</span>
+            </div>
+            <div class="skill-level"><span style="width: 90%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="systems">
+            <div class="skill-icon"><i class="fa-solid fa-file-video"></i></div>
+            <div class="skill-info">
+              <h4>FFmpeg</h4>
+              <span>Transcoding &amp; Pipelines</span>
+            </div>
+            <div class="skill-level"><span style="width: 92%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="systems">
+            <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
+            <div class="skill-info">
+              <h4>Vulkan / GLSL</h4>
+              <span>Hardware Acceleration</span>
+            </div>
+            <div class="skill-level"><span style="width: 80%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="systems">
+            <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="skill-info">
+              <h4>RIFE AI / ncnn</h4>
+              <span>Neural Frame Generation</span>
+            </div>
+            <div class="skill-level"><span style="width: 88%"></span></div>
+          </div>
+
+          <!-- EDA & Hardware -->
+          <div class="skill-item" data-category="eda">
+            <div class="skill-icon"><i class="fa-solid fa-wave-square"></i></div>
+            <div class="skill-info">
+              <h4>Icarus Verilog</h4>
+              <span>Simulation Engine</span>
+            </div>
+            <div class="skill-level"><span style="width: 90%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="eda">
+            <div class="skill-icon"><i class="fa-solid fa-chart-simple"></i></div>
+            <div class="skill-info">
+              <h4>GTKWave</h4>
+              <span>VCD Waveform Analysis</span>
+            </div>
+            <div class="skill-level"><span style="width: 88%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="eda">
+            <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <div class="skill-info">
+              <h4>Verilator &amp; GHDL</h4>
+              <span>Compilation &amp; Linting</span>
+            </div>
+            <div class="skill-level"><span style="width: 82%"></span></div>
+          </div>
+
+          <!-- Frameworks & Web -->
+          <div class="skill-item" data-category="frameworks">
+            <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+            <div class="skill-info">
+              <h4>React 19 &amp; Vite</h4>
+              <span>Modern Reactive UIs</span>
+            </div>
+            <div class="skill-level"><span style="width: 92%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="frameworks">
+            <div class="skill-icon"><i class="fa-solid fa-n"></i></div>
+            <div class="skill-info">
+              <h4>Next.js 15</h4>
+              <span>SSR &amp; Server Actions</span>
+            </div>
+            <div class="skill-level"><span style="width: 88%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="frameworks">
+            <div class="skill-icon"><i class="fa-solid fa-window-maximize"></i></div>
+            <div class="skill-info">
+              <h4>Tauri v2</h4>
+              <span>Lightweight Rust Desktop</span>
+            </div>
+            <div class="skill-level"><span style="width: 90%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="frameworks">
+            <div class="skill-icon"><i class="fa-solid fa-wind"></i></div>
+            <div class="skill-info">
+              <h4>Tailwind CSS</h4>
+              <span>Utility-First Design</span>
+            </div>
+            <div class="skill-level"><span style="width: 95%"></span></div>
+          </div>
+
+          <!-- DevOps & Tools -->
+          <div class="skill-item" data-category="devops">
+            <div class="skill-icon"><i class="fa-brands fa-linux"></i></div>
+            <div class="skill-info">
+              <h4>Arch Linux</h4>
+              <span>Primary Development OS</span>
+            </div>
+            <div class="skill-level"><span style="width: 96%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="devops">
+            <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+            <div class="skill-info">
+              <h4>Git &amp; GitHub Actions</h4>
+              <span>CI/CD &amp; Versioning</span>
+            </div>
+            <div class="skill-level"><span style="width: 92%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="devops">
+            <div class="skill-icon"><i class="fa-solid fa-font"></i></div>
+            <div class="skill-info">
+              <h4>Tesseract OCR</h4>
+              <span>Document Extraction</span>
+            </div>
+            <div class="skill-level"><span style="width: 88%"></span></div>
+          </div>
+
+          <div class="skill-item" data-category="devops">
+            <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
+            <div class="skill-info">
+              <h4>WebAssembly (WASM)</h4>
+              <span>Client-Side Runtimes</span>
+            </div>
+            <div class="skill-level"><span style="width: 82%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Showcase Section -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-rocket"></i> Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Real-world software built for high efficiency, productivity, and developer delight.</p>
+        </div>
+
+        <!-- Project Controls: Search & Category Pills -->
+        <div class="project-controls">
+          <div class="project-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="projectSearch" placeholder="Search by name, tech (e.g., Rust, mpv, Verilog, Next.js)..." />
+            <button id="clearSearchBtn" class="clear-search" style="display:none;" title="Clear search">&times;</button>
+          </div>
+
+          <div class="project-category-pills" id="projectPills">
+            <button class="proj-pill active" data-filter="all">All (8)</button>
+            <button class="proj-pill" data-filter="systems">Systems &amp; Media</button>
+            <button class="proj-pill" data-filter="desktop">Desktop &amp; EDA</button>
+            <button class="proj-pill" data-filter="web">Web &amp; Portals</button>
+            <button class="proj-pill" data-filter="tools">Tools &amp; Archives</button>
+          </div>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          
+          <!-- Project 1: HDL EDA Studio -->
+          <article class="project-card" data-category="desktop" data-tags="tauri rust verilog vhdl monaco wasm typescript react systemverilog">
+            <div class="project-card-banner">
+              <img src="assets/verilog_preview.png" alt="HDL EDA Studio Preview" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/punitr2007/Verilog_Tool/main/assets/preview.png';" />
+              <div class="banner-badge badge-rust">Tauri v2 + Rust</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-title">
+                  <a href="https://github.com/punitr2007/Verilog_Tool" target="_blank" rel="noopener noreferrer">
+                    HDL EDA Studio <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </h3>
+                <div class="repo-meta-badges">
+                  <span class="meta-badge stars" data-repo="punitr2007/Verilog_Tool"><i class="fa-solid fa-star"></i> <span class="count">★</span></span>
+                </div>
+              </div>
+              <p class="project-desc">
+                Standalone native desktop workstation and web IDE for SystemVerilog, Verilog &amp; VHDL featuring instant sub-millisecond simulation, dual Monaco editors, interactive high-DPI waveform viewer, and offline readiness.
+              </p>
+              <div class="tech-tags">
+                <span>Tauri v2</span>
+                <span>Rust</span>
+                <span>React 19</span>
+                <span>Monaco Editor</span>
+                <span>iverilog</span>
+                <span>WASM</span>
+              </div>
+              <div class="project-card-actions">
+                <a href="https://github.com/punitr2007/Verilog_Tool" target="_blank" rel="noopener noreferrer" class="btn-card primary">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <button class="btn-card secondary open-modal-btn" data-project="verilog_tool">
+                  <i class="fa-solid fa-circle-info"></i> Architecture
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: SmartPlayer -->
+          <article class="project-card" data-category="systems" data-tags="python mpv vapoursynth vulkan rife ai linux glsl shaders lua">
+            <div class="project-card-banner banner-gradient-media">
+              <div class="banner-abstract-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>48 / 60 / 120+ FPS AI Engine</span>
+              </div>
+              <div class="banner-badge badge-amber">Real-Time AI</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-title">
+                  <a href="https://github.com/punitr2007/SmartPlayer" target="_blank" rel="noopener noreferrer">
+                    SmartPlayer <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </h3>
+                <div class="repo-meta-badges">
+                  <span class="meta-badge stars" data-repo="punitr2007/SmartPlayer"><i class="fa-solid fa-star"></i> <span class="count">★</span></span>
+                </div>
+              </div>
+              <p class="project-desc">
+                Real-time AI video frame interpolation and hardware-accelerated playback suite for <code>mpv</code> powered by VapourSynth, ncnn-Vulkan RIFE deep learning models, and interactive in-player OSD controls.
+              </p>
+              <div class="tech-tags">
+                <span>Python</span>
+                <span>mpv</span>
+                <span>VapourSynth</span>
+                <span>RIFE AI</span>
+                <span>ncnn-Vulkan</span>
+                <span>Lua</span>
+              </div>
+              <div class="project-card-actions">
+                <a href="https://github.com/punitr2007/SmartPlayer" target="_blank" rel="noopener noreferrer" class="btn-card primary">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <button class="btn-card secondary open-modal-btn" data-project="smartplayer">
+                  <i class="fa-solid fa-circle-info"></i> Specs
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Lossless Scaling mpv -->
+          <article class="project-card" data-category="systems" data-tags="vulkan mpv linux arch bash shell wayland x11 shaders lsfg">
+            <div class="project-card-banner banner-gradient-vulkan">
+              <div class="banner-abstract-icon">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <span>Vulkan Swapchain LSFG</span>
+              </div>
+              <div class="banner-badge badge-cyan">Native Vulkan</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-title">
+                  <a href="https://github.com/punitr2007/lsfg-mpv-interpolation-configs" target="_blank" rel="noopener noreferrer">
+                    Lossless Scaling (lsfg-vk) for mpv <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </h3>
+                <div class="repo-meta-badges">
+                  <span class="meta-badge stars" data-repo="punitr2007/lsfg-mpv-interpolation-configs"><i class="fa-solid fa-star"></i> <span class="count">★</span></span>
+                </div>
+              </div>
+              <p class="project-desc">
+                Transform 24 FPS movies and 30/60 FPS video playback into silky-smooth 72 FPS / 96 FPS / 120+ FPS on Linux using native Vulkan swapchain frame generation, custom CLI presets, and Wayland integration.
+              </p>
+              <div class="tech-tags">
+                <span>Vulkan 1.3</span>
+                <span>mpv</span>
+                <span>Arch Linux</span>
+                <span>Wayland</span>
+                <span>Bash</span>
+              </div>
+              <div class="project-card-actions">
+                <a href="https://github.com/punitr2007/lsfg-mpv-interpolation-configs" target="_blank" rel="noopener noreferrer" class="btn-card primary">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <button class="btn-card secondary open-modal-btn" data-project="lsfg_mpv">
+                  <i class="fa-solid fa-circle-info"></i> Architecture
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: MathStudio -->
+          <article class="project-card" data-category="desktop" data-tags="react vite typescript latex mathlive pdf splitview tailwind">
+            <div class="project-card-banner">
+              <img src="assets/mathstudio.png" alt="MathStudio Preview" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/punitr2007/mathstudio/main/src/assets/hero.png';" />
+              <div class="banner-badge badge-cyan">React 19 + TypeScript</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-title">
+                  <a href="https://github.com/punitr2007/mathstudio" target="_blank" rel="noopener noreferrer">
+                    MathStudio <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </h3>
+                <div class="repo-meta-badges">
+                  <span class="meta-badge stars" data-repo="punitr2007/mathstudio"><i class="fa-solid fa-star"></i> <span class="count">★</span></span>
+                </div>
+              </div>
+              <p class="project-desc">
+                Fast, keyboard-first visual mathematical document editor &amp; assignment suite with CortexJS MathLive integration, split-screen PDF problem sheet viewer, and multi-format LaTeX/Markdown export.
+              </p>
+              <div class="tech-tags">
+                <span>React 19</span>
+                <span>TypeScript</span>
+                <span>MathLive</span>
+                <span>LaTeX</span>
+                <span>PDF.js</span>
+              </div>
+              <div class="project-card-actions">
+                <a href="https://github.com/punitr2007/mathstudio" target="_blank" rel="noopener noreferrer" class="btn-card primary">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <button class="btn-card secondary open-modal-btn" data-project="mathstudio">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: IMS NSUT Modern Portal -->
+          <article class="project-card" data-category="web" data-tags="nextjs typescript tailwind scraper search ocr nsut student attendance">
+            <div class="project-card-banner banner-gradient-nextjs">
+              <div class="banner-abstract-icon">
+                <i class="fa-solid fa-building-columns"></i>
+                <span>10,000+ Circulars &amp; Analytics</span>
+              </div>
+              <div class="banner-badge badge-purple">Next.js 15</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-title">
+                  <a href="https://github.com/punitr2007/ims_app" target="_blank" rel="noopener noreferrer">
+                    IMS NSUT Portal &amp; Notice Engine <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </h3>
+                <div class="repo-meta-badges">
+                  <span class="meta-badge stars" data-repo="punitr2007/ims_app"><i class="fa-solid fa-star"></i> <span class="count">★</span></span>
+                </div>
+              </div>
+              <p class="project-desc">
+                Next-Gen academic dashboard and background sync engine for NSUT featuring sub-10ms fuzzy search over 10,000+ circulars, live attendance bunk margin analytics, and serverless OCR auto-solve.
+              </p>
+              <div class="tech-tags">
+                <span>Next.js 15</span>
+                <span>TypeScript</span>
+                <span>Tailwind CSS</span>
+                <span>Tesseract.js</span>
+                <span>GitHub Actions</span>
+              </div>
+              <div class="project-card-actions">
+                <a href="https://github.com/punitr2007/ims_app" target="_blank" rel="noopener noreferrer" class="btn-card primary">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <button class="btn-card secondary open-modal-btn" data-project="ims_app">
+                  <i class="fa-solid fa-circle-info"></i> Architecture
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: PDFtools -->
+          <article class="project-card" data-category="tools" data-tags="python ocr tesseract regex pillow pdf sorting heuristics">
+            <div class="project-card-banner">
+              <img src="assets/pdftools.png" alt="PDFtools Preview" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/punitr2007/PDFtools/main/Images/Screenshot_20260912_160832.png';" />
+              <div class="banner-badge badge-green">OCR &amp; Sorting</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-title">
+                  <a href="https://github.com/punitr2007/PDFtools" target="_blank" rel="noopener noreferrer">
+                    PDFtools: Smart Image-to-Sorted-PDF <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </h3>
+                <div class="repo-meta-badges">
+                  <span class="meta-badge stars" data-repo="punitr2007/PDFtools"><i class="fa-solid fa-star"></i> <span class="count">★</span></span>
+                </div>
+              </div>
+              <p class="project-desc">
+                Intelligent OCR and heuristic-driven PDF compilation tool. Scans disorganized question screenshots, extracts question indices, applies multi-tiered natural numerical sorting, and compiles publication-grade PDFs.
+              </p>
+              <div class="tech-tags">
+                <span>Python 3</span>
+                <span>Tesseract OCR</span>
+                <span>Pillow</span>
+                <span>Regex Engine</span>
+                <span>CLI</span>
+              </div>
+              <div class="project-card-actions">
+                <a href="https://github.com/punitr2007/PDFtools" target="_blank" rel="noopener noreferrer" class="btn-card primary">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <button class="btn-card secondary open-modal-btn" data-project="pdftools">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: DiscMaster -->
+          <article class="project-card" data-category="desktop" data-tags="python gtk ffmpeg media cd dvd vcd ripping appimage linux">
+            <div class="project-card-banner">
+              <img src="assets/discmaster.png" alt="DiscMaster Preview" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/punitr2007/Discmaster/main/assets/discmaster.png';" />
+              <div class="banner-badge badge-amber">Desktop App</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-title">
+                  <a href="https://github.com/punitr2007/Discmaster" target="_blank" rel="noopener noreferrer">
+                    DiscMaster <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </h3>
+                <div class="repo-meta-badges">
+                  <span class="meta-badge stars" data-repo="punitr2007/Discmaster"><i class="fa-solid fa-star"></i> <span class="count">★</span></span>
+                </div>
+              </div>
+              <p class="project-desc">
+                Classic GTK-inspired desktop studio designed to rip, recover, transcode, stitch, and inspect legacy optical media (VCD, DVD, Audio CD, raw CD-ROM XA dumps) with multi-threaded conversion and portable AppImage packaging.
+              </p>
+              <div class="tech-tags">
+                <span>Python</span>
+                <span>GTK 3/4</span>
+                <span>FFmpeg</span>
+                <span>cdrdao</span>
+                <span>AppImage</span>
+              </div>
+              <div class="project-card-actions">
+                <a href="https://github.com/punitr2007/Discmaster" target="_blank" rel="noopener noreferrer" class="btn-card primary">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <button class="btn-card secondary open-modal-btn" data-project="discmaster">
+                  <i class="fa-solid fa-circle-info"></i> Specs
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: Study-Material -->
+          <article class="project-card" data-category="tools" data-tags="academic nsut notes pyqs ocr engineering signals circuits math">
+            <div class="project-card-banner banner-gradient-academic">
+              <div class="banner-abstract-icon">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span>Semester 3 Complete Archive</span>
+              </div>
+              <div class="banner-badge badge-blue">Academic Archive</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-title">
+                  <a href="https://github.com/punitr2007/Study-Material" target="_blank" rel="noopener noreferrer">
+                    NSUT Engineering Archive <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </h3>
+                <div class="repo-meta-badges">
+                  <span class="meta-badge stars" data-repo="punitr2007/Study-Material"><i class="fa-solid fa-star"></i> <span class="count">★</span></span>
+                </div>
+              </div>
+              <p class="project-desc">
+                Centralized university course archive with OCR-classified past question papers (Mid/End/Summer Semesters), unit-wise verified lecture notes, reference textbooks, MIT problem sets, and lab experiment manuals.
+              </p>
+              <div class="tech-tags">
+                <span>OCR Classifier</span>
+                <span>Signals &amp; Systems</span>
+                <span>Circuits</span>
+                <span>Probability</span>
+                <span>Math ML</span>
+              </div>
+              <div class="project-card-actions">
+                <a href="https://github.com/punitr2007/Study-Material" target="_blank" rel="noopener noreferrer" class="btn-card primary">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <button class="btn-card secondary open-modal-btn" data-project="study_material">
+                  <i class="fa-solid fa-circle-info"></i> Contents
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive In-Browser CLI Terminal Section -->
+    <section class="section terminal-section" id="terminal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-terminal"></i> Interactive Shell</span>
+          <h2 class="section-title">Developer Terminal</h2>
+          <p class="section-subtitle">Prefer the command line? Run commands to inspect repos, skills, or view neofetch system info.</p>
+        </div>
+
+        <div class="terminal-container">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red" title="Close" id="termDotRed"></span>
+              <span class="dot yellow" title="Minimize"></span>
+              <span class="dot green" title="Maximize"></span>
+            </div>
+            <div class="terminal-tab">
+              <i class="fa-solid fa-code"></i> punit@punitr2007-workstation:~ (zsh)
+            </div>
+            <div class="terminal-controls">
+              <button id="clearTermBtn" title="Clear screen (Ctrl+L)"><i class="fa-solid fa-eraser"></i></button>
+            </div>
+          </div>
+
+          <div class="terminal-body" id="terminalOutput">
+            <div class="term-line banner-line">
+              <pre class="ascii-art">
+  ____             _ _     ____             _             
+ |  _ \ _   _ _ __ (_) |_  |  _ \ __ _ _ __ (_) __ _ _ __  
+ | |_) | | | | '_ \| | __| | |_) / _` | '_ \| |/ _` | '_ \ 
+ |  __/| |_| | | | | | |_  |  _ < (_| | | | | | (_| | | | |
+ |_|    \__,_|_| |_|_|\__| |_| \_\__,_|_| |_|/ |\__,_|_| |_|
+                                            |__/            
+              </pre>
+            </div>
+            <div class="term-line">
+              Welcome to Punit Ranjan's Interactive Portfolio Shell (v2.4.0).
+            </div>
+            <div class="term-line text-dim">
+              Type <span class="term-cmd">help</span> to view available commands, or try <span class="term-cmd">neofetch</span>, <span class="term-cmd">projects</span>, or <span class="term-cmd">skills</span>.
+            </div>
+            <div class="term-divider"></div>
+          </div>
+
+          <div class="terminal-input-row">
+            <span class="prompt-user">punit</span><span class="prompt-at">@</span><span class="prompt-host">archlinux</span>:<span class="prompt-path">~</span><span class="prompt-char">$</span>
+            <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="Type a command (e.g. help, projects, neofetch, contact)..." />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Activity & Analytics Section -->
+    <section class="section analytics-section" id="analytics">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-chart-pie"></i> Metrics</span>
+          <h2 class="section-title">GitHub Analytics &amp; Activity</h2>
+          <p class="section-subtitle">Real-time statistics, language telemetry, and open source contributions from GitHub.</p>
+        </div>
+
+        <div class="analytics-grid">
+          <div class="analytics-card">
+            <div class="analytics-card-header">
+              <i class="fa-solid fa-chart-column"></i> Repository Statistics
+            </div>
+            <div class="analytics-card-body">
+              <img src="https://github-readme-stats.vercel.app/api?username=punitr2007&show_icons=true&theme=gruvbox&hide_border=true&count_private=true&include_all_commits=true" alt="Punit's GitHub Stats" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="analytics-card-header">
+              <i class="fa-solid fa-code"></i> Top Language Telemetry
+            </div>
+            <div class="analytics-card-body">
+              <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=punitr2007&layout=compact&theme=gruvbox&hide_border=true&langs_count=8" alt="Top Languages" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="analytics-card card-full">
+            <div class="analytics-card-header">
+              <i class="fa-solid fa-fire"></i> Continuous Contribution Streak
+            </div>
+            <div class="analytics-card-body">
+              <img src="https://github-readme-streak-stats.herokuapp.com/?user=punitr2007&theme=gruvbox&hide_border=true" alt="Contribution Streak" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box-glass">
+          <div class="contact-content">
+            <span class="section-badge"><i class="fa-solid fa-handshake"></i> Let's Collaborate</span>
+            <h2 class="contact-title">Have a project, idea, or systems question?</h2>
+            <p class="contact-desc">
+              Whether you're interested in real-time multimedia pipelines, custom Tauri desktop tools, digital hardware designs, or high-performance web engineering — my inbox is always open.
+            </p>
+
+            <div class="contact-actions">
+              <a href="mailto:punitr2007@gmail.com" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-paper-plane"></i> Send an Email
+              </a>
+              <a href="https://www.linkedin.com/in/punit-ranjan-53088028a" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
+                <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+              </a>
+              <button class="btn btn-outline btn-lg copy-email-btn" data-email="punitr2007@gmail.com">
+                <i class="fa-solid fa-copy"></i> Copy Email Address
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="brand-badge">⚡</span> <b>Punit Ranjan</b> &bull; Systems &amp; Multimedia Engineer
+        <p class="footer-subtext">Engineered with modern HTML5, Vanilla CSS &amp; JavaScript. Hosted on GitHub Pages.</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/punitr2007" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/punit-ranjan-53088028a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:punitr2007@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal -->
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <span class="modal-badge" id="modalBadge">Architecture</span>
+          <h3 id="modalTitle">Project Title</h3>
+        </div>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="modal-footer" id="modalFooter">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
